@@ -1,0 +1,16 @@
+@import '../variables/colors';
+@import 'theme';
+
+@mixin theme-dark {
+  @include theme(
+          $name: 'dark',
+          $background: $black,
+          $fill-secondary: rgba($white, 0.15),
+          $fill-overlay: rgba($white, 0.1),
+          $fill-accent: $off-white,
+          $gridline: rgba($white, 0.2),
+          $text-1: rgba($white, 1.0),
+          $text-2: rgba($white, 0.7),
+          $text-3: rgba($white, 0.6)
+  );
+}

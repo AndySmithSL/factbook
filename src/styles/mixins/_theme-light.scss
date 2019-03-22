@@ -1,0 +1,16 @@
+@import '../variables/colors';
+@import 'theme';
+
+@mixin theme-light {
+  @include theme(
+          $name: 'light',
+          $background: $white,
+          $fill-overlay: rgba($black, 0.25),
+          $fill-secondary: rgba($black, 0.15),
+          $fill-accent: rgba($black, 0.7),
+          $gridline: rgba($black, 0.2),
+          $text-1: rgba($black, 1.0),
+          $text-2: rgba($black, 1.0),
+          $text-3: rgba($black, 0.8)
+  );
+}

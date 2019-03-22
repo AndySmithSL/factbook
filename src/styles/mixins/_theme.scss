@@ -1,0 +1,120 @@
+$fill-primary: #2bb3bb;
+$line-primary: #6ac6c6;
+$line-secondary: rgba(#868483, 0.7);
+
+@mixin theme($name, $background, $fill-secondary, $fill-accent, $fill-overlay, $gridline, $text-1, $text-2, $text-3) {
+  
+  $stale-primary-color: rgba($text-1, 0.5);
+  
+  &.theme-#{$name} {
+    > *, .theme-background-default {
+      background-color: $background;
+    }
+
+    .theme-background-primary {
+      background-color: $fill-primary;
+    }
+
+    .stale .theme-background-primary {
+      background-color: $stale-primary-color;
+    }
+
+    .theme-fill-primary {
+      fill: $fill-primary;
+    }
+
+    .theme-background-secondary {
+      background-color: $fill-secondary;
+    }
+
+    .theme-background-accent {
+      background-color: $fill-accent;
+    }
+
+    .theme-background-overlay {
+      background-color: $fill-overlay;
+    }
+
+    .theme-text-primary {
+      color: $text-1;
+    }
+
+    .stale .theme-text-primary {
+      color: $stale-primary-color;
+    }
+
+    .theme-text-secondary {
+      color: $text-2;
+
+      &.selected {
+        color: $text-1;
+      }
+    }
+
+    .theme-text-tertiary {
+      color: $text-3;
+    }
+
+    .theme-border-primary {
+      border-color: $line-primary;
+    }
+
+    .theme-border-secondary {
+      border-color: $line-secondary;
+    }
+
+    .theme-border-accent {
+      border-color: $text-1;
+    }
+
+    .theme-stroke-primary {
+      stroke: $line-primary;
+    }
+
+    .stale .theme-stroke-primary {
+      stroke: $stale-primary-color;
+    }
+
+    .theme-stroke-secondary {
+      stroke: $line-secondary;
+    }
+
+    .theme-stroke-gridline {
+      stroke: $gridline;
+    }
+
+    .theme-fill-accent {
+      fill: $text-1;
+    }
+
+    .stale .theme-fill-accent {
+      fill: $text-3;
+    }
+
+    .theme-fill-gridline {
+      fill: $gridline;
+    }
+
+    .theme-spinner::before {
+      border-color: $fill-secondary;
+      border-right-color: transparent;
+    }
+
+    .theme-logo {
+      background-image: url('../../assets/sl-logo-#{$name}.svg');
+    }
+
+    // CHART GRADIENTS
+    defs {
+      #GradientFill > * {
+        stop-color: $fill-primary;
+      }
+      #GradientMask > * {
+        stop-color: $background;
+      }
+      #GradientFillStale > * {
+        stop-color: $white;
+      }
+    }
+  }
+}
